@@ -25,7 +25,7 @@ public class PricingController {
 
     @GetMapping(path = "/product/optimalPriceProductQuantity/{id}")
     public ResponseEntity<List<OptimalPrice>> calculateOptimalPricesByProductQuantity(@PathVariable("id") int id, @RequestParam int quantity) {
-        List<OptimalPrice> optimalPrices = optimalPrices = priceService.calculateOptimalPricesByProductQuantity(id, quantity);
+        List<OptimalPrice> optimalPrices = priceService.calculateOptimalPricesByProductQuantity(id, quantity);
         return new ResponseEntity<>(optimalPrices, HttpStatus.OK);
     }
 
